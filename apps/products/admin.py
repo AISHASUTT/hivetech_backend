@@ -6,5 +6,5 @@ class ProductModel(admin.ModelAdmin):
     fields = ['name', 'description', 'price', 'type', 'image', 'category']
     list_display = fields
     list_filter = []
-    search_fields = ('name', 'description')
+    search_fields = ['name', 'description']
     

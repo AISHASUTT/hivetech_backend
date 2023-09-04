@@ -39,8 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps',
-    'hivetechbackend',
+    'apps.carts',
+    'apps.categories',
+    'apps.ordered_items',
+    'apps.orders',
+    'apps.products',
+    'apps.users',
     
 ]
 

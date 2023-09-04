@@ -1,6 +1,11 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
-from hivetechbackend.constants import PRODUCT_TYPE
+from apps.categories.models import Category
+
+PRODUCT_TYPE = (
+    ('male', 'Male'),
+    ('female','Female')
+)
 
 # Create your models here.
 
@@ -26,7 +31,7 @@ class Product(models.Model):
 
     #We need to chnge the catagory after creating catagories app
     category= models.CharField(
-        'Category', blank=True, null=True,max_length=300
+        Category, blank=True, null=True,max_length=300
     )
     def __str__(self):
         return self.name

@@ -1,5 +1,5 @@
 from django.db import models
-from users.models import CustomUser
+from apps.users.models import User
 from django.utils import timezone
 
 class Order(models.Model):
@@ -7,7 +7,7 @@ class Order(models.Model):
         db_table = 'order'
     
     user = models.ForeignKey(
-        CustomUser, related_name='related_order_user', on_delete=models.CASCADE
+        User, related_name='related_order_user', on_delete=models.CASCADE
     )
     customer_name = models.CharField(
         'Customer Name', blank=False, null=False, max_length=255

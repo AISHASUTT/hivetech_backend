@@ -1,7 +1,7 @@
 from .models import Product
 from rest_framework import serializers
-from cloudinary.models import CloudinaryField
-from categories.serializers import CategorySerializer
+# from cloudinary.models import CloudinaryField
+from apps.categories.serializers import CategorySerializer
 
 class ProductSerializer(serializers.ModelSerializer):
     image = serializers.ImageField(read_only=True)

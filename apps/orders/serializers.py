@@ -1,10 +1,10 @@
-from ordered_items.serializers import OrderItemSerializer
+from apps.ordered_items.serializers import OrderItemSerializer
 from apps import users
-from users.serializers import UserSerializer
-from carts.models import Cart
+from apps.users.serializers import UserSerializer
+from apps.carts.models import Cart
 from .models import Order
 from rest_framework import serializers
-from ordered_items.models import OrderItem
+from apps.ordered_items.models import OrderItem
 
 
 class OrderSerializer(serializers.ModelSerializer):

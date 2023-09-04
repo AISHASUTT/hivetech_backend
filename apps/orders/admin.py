@@ -1,17 +1,12 @@
 from django.contrib import admin
-from .models import Order, OrderItem
+
+
+from apps.orders.models import Order
+
 # Register your models here.
-
-class OrderItemInLine(admin.ModelAdmin):
-    model = OrderItem
-    extra = 0
-
 @admin.register(Order)
-class OrderAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user', 'creatted_at', 'paid')
-    list_filter = ('paid',)
-    inlines = [OrderItemInLine]
-
-@admin.register(OrderItem)
-class OrderItemAdmin(admin.ModelAdmin):
-    list_display = ('order', 'product', 'quantity', 'price')
+class OrderedModel(admin.ModelAdmin):
+    fields=['user', 'customer_name', 'customer_phone', 'address', 'pin_code', 'building_type', 'city','state','total_price', 'total_qty']
+    list_display = fields
+    list_filter = []
+    search_fields=['user']
